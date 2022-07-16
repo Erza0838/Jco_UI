@@ -1,0 +1,995 @@
+html
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: var(--Box-Setting);
+	scroll-behavior: smooth;
+}
+
+/*CSS Variable*/
+:root
+{	
+	--Box-Setting: border-box;
+	--Paragraf-Effect: hsla(15, 90%, 25%, 1.0);
+
+	--Title-Font-Color: hsla(206, 35%, 10%, 1.0);
+	--Shadow-Filter: linear-gradient(to right, rgba(10, 10, 10, 1.0), rgba(70, 70, 70, .9), rgba(75, 75, 75, 0.5), rgba(77, 77, 77, 0.0));
+	--White-Bg: rgba(255, 255, 255, 1.0);
+	--Paragraf-Color: rgba(65, 65, 65, 1.0);
+	--Second-Paragraf-Color: hsla(161, 5%, 16%, .9);
+
+/*Variable untuk bagian background-color*/
+--Underline-Background-color: hsla(180, 10%, 70%, .5);
+/*Baris akhir variable*/
+
+/*Variable bagian Position*/
+	--Fixed-Position: fixed;
+	--Relative-Position: relative;
+	--Absolute-Position: absolute;
+/*Akhir baris variable Position*/
+
+/*Variable bagian Display*/
+	--Flexing-Items: flex;
+	--Inline-Block-Ds: inline-block;
+	--Block-Display: block;
+/*Akhir baris variable Display*/
+
+/*Variable bagian Dekorasi*/
+	--Link-Decoration: none;
+	--Cursor-Pointer: pointer;
+/*Akhir baris Variable Dekorasi*/
+
+/*Variable bagian efek hover untuk background-color*/
+--Bg-Hover-Effect-Donut: rgba(198, 131, 209, .6);
+--Bg-Hover-Effect-Burger: rgba(241, 221, 114, .6);
+--Bg-Hover-Effect-Yogurt: rgba(190, 190, 190, .6);
+/*Akhir baris variable efek hover*/
+}
+	
+	/*Bagian custom scroll*/
+	/*Baris akhir custom scroll*/
+
+/*Bagian @font-face*/
+@font-face
+{	
+	font-family: "Nav_Fonts";
+	font-weight: normal;
+	src: url(Fira_Code/FiraCode-Bold.ttf) format("trutype");
+}
+/*Bagian @font-face*/
+
+	/*Bagian @font-face*/
+	@font-face
+	{	
+		font-family: "Exploration_Link";
+		src: local(Fira_Code/static/FiraCode-Light.ttf) format("trutype");
+
+		font-family: "Title_Fonts";
+		src: local(Kanit/Kanit-ExtraBold.ttf) format("trutype");
+
+		font-family: "Second_Paragraf_Fonts";
+		src: local(Kanit/Kanit-Light.ttf) format("trutype");
+
+		font-family: "Paragraf_Font";
+		src: local(Fira_Code/statict/FiraCode-Light.ttf) format("trutype");
+		/*font-weight: 200;*/
+	}
+	/*Bagian @font-face*/
+
+body
+{
+	background-color: var(--White-Bg);
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 175vmax;
+	width: 100vmax;
+}
+
+section.Img_Slider_Container
+{
+	display: var(--Flexing-Items);
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	transform: translate(-1vmin, 25vh);
+}
+
+section.Img_Slider_Container > div.Img_Slide
+{	
+	position: var(--Relative-Position);
+	box-sizing: var(--Box-Setting);
+	max-width: 2000vmin;
+	max-height: 700vmin;
+	/*inset: 10px 30% 20px 2px;*/
+	filter: contrast( calc(2% + 80%) );
+}
+
+section.Img_Slider_Container > div.Img_Slide::before
+{	
+	content: '';
+	/*left: 0;*/
+	top: 35%;
+	justify-content: flex-start;
+	/*align-items: center;*/
+	position: var(--Absolute-Position);
+	width: 75vmin;
+	height: .2vmin;
+	background-color: var(--Hover-Effect);
+	box-sizing: var(--Box-Setting);
+}
+
+section.Img_Slider_Container > div.Img_Slide::after
+{		
+	/*position: var(--Relative-Position);*/
+	display: var(--Flexing-Items);
+	content: '';
+	/*box-shadow: inset -2vmin 0 .5rem var(--Shadow-Filter);*/
+	justify-content: flex-start;
+	transform: translateY(-96vmin) rotateY(45turn);
+	background: var(--Shadow-Filter);
+	opacity: .8;
+	filter: blur(.6px);
+	width: 45vmin;
+	height: 95vmin;
+	box-sizing: var(--Box-Setting);
+}
+
+	/*Bagian Paragraf*/
+	section.Paragraf_Container
+	{	
+		position: var(--Relative-Position);
+		top: -56vmin;
+		left: -1vmin;
+		display: var(--Flexing-Items);
+		justify-content: center;
+		align-items: center;
+		flex-flow: column wrap;
+	}
+		section.Paragraf_Container > h4.Paragraf_Field
+		{	
+			font-family: "Nav_Fonts",sans-serif;
+			font-size: calc(1.1rem + 1vmin);
+			font-stretch: expanded;
+			font-weight: 200;
+			padding-top: 1rem;
+			color: var(--Paragraf-Color);
+		}
+
+	/*Bagian link*/
+	a#Explore_Link 
+	{	
+		display: var(--Flexing-Items);
+		align-items: center;
+		justify-content: space-around;
+		text-decoration: var(--Link-Decoration);
+		width: 37vmin;
+		height: 8vmin;
+		transform: translateY(7vmin);
+		border: .3vmin solid var(--Hover-Effect);
+		box-sizing: var(--Box-Setting);
+		font-family: "Exploration_Link", sans-serif;
+		font-weight: 200;
+		color: var(--Hover-Effect);
+		cursor: var(--Cursor-Pointer);
+	}
+			/*Bagian efek hover*/
+			a#Explore_Link:hover
+			{	
+				transition: background-color 500ms ease-in;
+				background-color: var(--Hover-Effect);
+				color: var(--White-Bg);
+			}
+			/*Akhir baris link*/
+	/*Akhir bagian paragraf*/
+
+/*Bagian Gambar Paket donat*/
+section.Donuts_Package_Container
+{
+	position: var(--Relative-Position);
+	display: var(--Flexing-Items);
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: space-between;
+	flex-direction: row;
+	transform: translate(-1vmin, -37vmin);
+}	
+	section.Donuts_Package_Container > img.Donuts_Package
+	{	
+		position: var(--Absolute-Position);
+		max-width: 2000vmin;
+		width: 206vmin;
+		height: 107vmin;	
+		aspect-ratio: 3/2;
+		display: var(--Inline-Block-Ds);
+		object-fit: content;
+		object-position: 50% 50%;
+	}
+/*Baris akhir gambar*/
+
+	/*Bagian navigasi kedua*/
+	section.Image_Nav_Container
+	{	
+		position: var(--Relative-Position);
+		display: var(--Flexing-Items);
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		align-content: center;
+		transform: translateY(88vmin);
+	}
+
+	div.Jco_Cafe_Container
+	{	
+		display: var(--Flexing-Items);
+		justify-content: space-between;
+		align-items: stretch;
+		transform: translate(26vmin, -2vmin);
+	}
+
+	div.Jco_Cafe_Container > img.Jco_Cafe_Image
+	{
+		width: 37vw;
+		max-width: max-content;
+		aspect-ratio: 11/8;
+		object-fit: cover;	
+		box-sizing: var(--Box-Setting);
+		transform: scaleY(1.3);
+	}
+		img.Jco_Cafe_Image + h3.Images_title_1
+		{	
+			position: var(--Relative-Position);
+			top: 73vmin;
+			left: -56vmin;
+			display: var(--Flexing-Items);
+			justify-content: space-between;
+			align-items: stretch;
+			flex-direction: row;
+		}
+
+	h3.Images_title_1 > a.Images_title_link_1
+	{
+		text-decoration: var(--Link-Decoration);
+		font-family: Title_Fonts, monospace;
+		font-size: 2.5vw;
+		transform: translateX(-12vmin);
+		font-weight: bolder;
+		font-stretch: expanded;
+		color: var(--Paragraf-Effect);
+		cursor: var(--Cursor-Pointer);
+		object-fit: min-content;
+	}
+
+	/*Bagian paragraf kedua*/
+	h3.Images_title_1 + p.Jco_Paragraf
+	{	
+		position: var(--Absolute-Position);
+		transform: translate(8vmin, 90vmin);
+		font-family: "Second_Paragraf_Fonts", serif;
+		font-size: 1.3vw;
+		font-weight: 150;
+		color: var(--Second-Paragraf-Color);
+		object-fit: min-content;
+	}
+	/*Baris akhir paragraf kedua*/
+
+		/*Bagian efek hover*/
+		h3.Images_title_1:hover::before
+		{	
+			content: '';
+			transition: all 250ms ease-in-out;
+			background-color: var(--White-Bg);
+			display: var(--Inline-Block-Ds);
+			width: .2vmin;
+			margin-left: -20vmin;
+			/*animation-name: right to left;
+			animation-duration: 250ms;
+			animation-direction: reverse;*/
+		}
+			/*Bagian CSS Animation*/
+			/*@keyframes right to left 
+			{
+				from 
+				{
+					background-color: var(--Hover-Effect);
+				}
+
+				to
+				{
+					background-color: var(--White-Bg);
+				}
+			}*/
+			/*Baris akhir CSS Animation*/
+
+			h3.Images_title_1:hover::after
+			{	
+				content: '';
+				transition: all 210ms ease-in-out;
+				transform: translate(40vmin, 1.6vmin) rotate(45deg);
+				border-top: .2vmin solid var(--Hover-Effect);
+				border-right: .2vmin solid var(--Hover-Effect);
+				box-sizing: var(--Box-Setting);
+				padding-left: 2vmin;
+				padding-top: 2vmin;
+				width: .5vmin;
+				position: var(--Absolute-Position);
+				display: var(--Inline-Block-Ds);
+				scroll-behavior: smooth;
+			}
+
+		h3.Images_title_1::before
+		{	
+			content: '';
+			position: var(--Absolute-Position);
+			transform: translate(8vmin, 9vmin) scaleX(4.5);
+			background-color: var(--Hover-Effect);
+			display: var(--Inline-Block-Ds);
+			width: 11.5vmin;
+			height: .2vmin;
+			box-sizing: var(--Box-Setting);
+		}
+
+		h3.Images_title_1::after
+		{	
+			content: '';
+			color: var(--Hover-Effect);
+			position: var(--Absolute-Position);
+			transform: translate(35vmin, 2vmin) rotate(45deg);
+			display: var(--Inline-Block-Ds);
+			border-top: .2vmin solid var(--Second-Paragraf-Color);
+			border-right: .2vmin solid var(--Second-Paragraf-Color);
+			box-sizing: var(--Box-Setting);
+			padding-left: 2vmin;
+			padding-top: 2vmin;
+			width: .5vmin;
+			height: 2vmin;
+		}
+
+	div.Jco_Car_Container
+	{	
+		display: var(--Flexing-Items);
+		flex-direction: column;
+		justify-content: space-between;
+		transform: translate(-15vmin, 1vmin);
+	}
+
+	div.Jco_Car_Container > img.Jco_Car_Image
+	{
+		width: 37vw;
+		max-width: max-content;
+		aspect-ratio: 11/8;
+		object-fit: cover;	
+		box-sizing: var(--Box-Setting);
+		transform: scaleY(1.3);
+	}	
+		img.Jco_Car_Image + h3.Images_title_2
+		{
+			position: var(--Relative-Position);
+			top: 18vh;
+			left: -5vmin;
+			display: var(--Flexing-Items);
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+			font-family: Title_Fonts, monospace;
+			font-size: 2.5vw;
+			font-weight: bolder;
+			font-stretch: expanded;
+			color: var(--Paragraf-Effect);
+		}
+
+		/*Bagian paragraf kedua*/
+		h3.Images_title_2 + p.Jco_Map
+		{	
+			position: var(--Absolute-Position);
+			transform: translate(8vmin, 90vmin);
+			font-family: "Second_Paragraf_Fonts", serif;
+			font-size: 1.3vw;
+			color: var(--Second-Paragraf-Color);
+			object-fit: min-content;
+		}
+		/*Baris akhir paragraf kedua*/
+
+			/*Bagian efek hover*/
+			h3.Images_title_2:hover::before
+			{	
+				content: '';
+				transition: all 250ms ease-in-out;
+				background-color: var(--White-Bg);
+				display: var(--Inline-Block-Ds);
+				margin-left: -50vmin;
+				width: .2vmin;
+			}
+
+				h3.Images_title_2:hover::after
+				{	
+					content: '';
+					transition: all 210ms ease-in-out;
+					transform: translate(23vmin, .5vmin) rotate(45deg);
+					border-top: .2vmin solid var(--Hover-Effect);
+					border-right: .2vmin solid var(--Hover-Effect);
+					box-sizing: var(--Box-Setting);
+					padding-left: 2vmin;
+					padding-top: 2vmin;
+					width: .5vmin;
+					position: var(--Absolute-Position);
+					display: var(--Inline-Block-Ds);
+				}
+			/*Baris akhir efek hover*/
+
+		h3.Images_title_2::before
+		{	
+			content: '';
+			transform: translate(-2vmin, 6vmin) scaleX(4.5);
+			background-color: var(--Hover-Effect);
+			display: var(--Inline-Block-Ds);
+			width: 11.5vmin;
+			height: .2vmin;
+			position: var(--Absolute-Position);
+			box-sizing: var(--Box-Setting);
+		}
+
+		h3.Images_title_2::after
+		{	
+			content: '';
+			position: var(--Absolute-Position);
+			transform: translate(19vmin, .5vmin) rotate(45deg);
+			display: var(--Inline-Block-Ds);
+			border-top: .2vmin solid var(--Second-Paragraf-Color);
+			border-right: .2vmin solid var(--Second-Paragraf-Color);
+			box-sizing: var(--Box-Setting);
+			padding-left: 2vmin;
+			padding-top: 2vmin;
+			width: .5vmin;
+		}
+
+	h3.Images_title_2 > a.Images_title_link_2
+	{
+		text-decoration: var(--Link-Decoration);
+		font-family: Title_Fonts, monospace;
+		font-size: 2.5vw;
+		transform: translateX(-10vmin);
+		font-weight: bolder;
+		font-stretch: expanded;
+		color: var(--Paragraf-Effect);
+		cursor: var(--Cursor-Pointer);
+		object-fit: min-content;
+	}
+	/*Baris akhir Navigasi kedua*/
+
+/*Bagian daftar menu makanan*/
+section.Food_List_Container
+{
+	display: var(--Flexing-Items);
+	flex-direction: column;
+	justify-content: flex-start;
+	align-content: stretch;
+	justify-content: space-around;
+	transform: translate(15vmin, 155vmin);
+	margin-left: 10vmin;
+	margin-right: 160vmin;
+}	
+	/*Bagian Judul*/
+	section.Food_List_Container > h3.Food_Title
+	{
+		position: var(--Relative-Position);
+		color: var(--Paragraf-Effect);
+		font-family: "Nav_Fonts",sans-serif;
+		font-size: calc(.5rem + 1vw);
+		text-transform: uppercase;
+		font-weight: 200;
+	}
+	/*Akhir bagian judul*/
+
+/*Bagian menu makanan*/
+h3.Food_Title + ul.Food_Menu_List
+{	
+	position: var(--Relative-Position);
+	transform: translate(0, 3vmin);
+	list-style: var(--Link-Decoration);
+	display: var(--Flexing-Items);
+	flex-direction: row;
+	row-gap: 50vmin;
+	/*margin-left: 10vmin;*/
+	justify-items: space-around;
+	align-items: space-around;
+	/*flex-direction: row;*/
+	/*align-items: space-between;*/
+	/*align-items: center;*/
+	/*justify-content: space-between;*/
+	/*align-content: space-evenly;*/
+	/*align-items: space-between;*/
+	/*flex-basis: 1;*/
+	/*padding-left: 2vmin;*/
+}
+
+/*Bagian Daftar menu pertama*/
+ul.Food_Menu_List > li.Menu_List_1
+{
+
+}
+	li.Menu_List_1 > a.Donut_Menu
+	{	
+		text-decoration: var(--Link-Decoration);
+	}
+
+a.Donut_Menu > div.Background_Thumbnail_1
+{	
+	object-fit: min-content;
+	box-sizing: var(--Box-Setting);
+	background-color: var(--Bg-Hover-Effect-Donut);
+	display: var(--Inline-Block-Ds);
+	width: 38vmin;
+}
+
+a.Donut_Menu > img#Menu_Thumbnail
+{
+	object-fit: min-content;
+	display: var(--Flexing-Items);
+	flex-direction: column;
+	box-sizing: var(--Box-Setting);
+}
+	/*Bagian efek hover*/
+	img#Menu_Thumbnail:hover
+	{
+		/*transition: transform 720ms cubic-bezier(0.7, 0.7, .7, 0.7);*/
+		transform: scale(1.2);
+		transform-origin: center;
+		animation: 950ms scalling;
+	}	
+	/*Baris akhir efek hover*/
+
+/*Bagian css animation*/
+@keyframes scalling
+{
+	0%
+	{
+		transform: scale(1.0);
+		box-sizing: var(--Box-Setting);
+	}
+
+	10%
+	{
+		transform: scale(.9);
+		box-sizing: var(--Box-Setting);
+		transition: transform 950ms;
+	}
+}
+/*Akhir bagian css animation*/
+
+/*img#Menu_Thumbnail::before
+{
+	content: 'Before';
+	color: black;
+}*/
+
+div.Background_Thumbnail_1 + h4.Donut_Link
+{
+	display: var(--Flexing-Items);
+	justify-content: center;
+	align-content: center;
+	justify-content: space-around;
+	transform: translate(0, 4vmin);
+	position: var(--Relative-Position);
+	color: var(--Paragraf-Effect);
+	font-family: "Nav_Fonts",sans-serif;
+	font-size: calc(.4rem + 1vw);
+	text-transform: uppercase;
+	font-weight: bolder;
+	font-stretch: condensed;
+}	
+
+		h4.Donut_Link::before
+		{
+			content: '';
+			display: var(--Flexing-Items);
+			justify-items: center;
+			justify-content: space-around;
+			align-items: flex-start;
+			position: var(--Absolute-Position);
+			transform: translate(1vmin, 6vmin) scaleX(4.5);
+			background-color: var(--Underline-Background-color);
+			display: var(--Inline-Block-Ds);
+			width: 8.4vmin;
+			height: .2vmin;
+			box-sizing: var(--Box-Setting);
+		}
+
+		/*Bagian hover efek*/
+		h4.Donut_Link:hover::before
+		{
+			transition: all 200ms linear;
+			background-color: var(--Hover-Effect);
+			box-sizing: var(--Box-Setting);
+			/*transform: translate(3vmin);*/
+		}
+		/*Baris akhir efek hover*/
+
+
+h4.Donut_Link + h5.Menu_Paragraf_1
+{	
+	transform: translate(0, 12vmin);
+	display: var(--Flexing-Items);
+	justify-content: flex-start;
+	align-items: center;
+	font-family: Second_Paragraf_Fonts, monospace;
+	font-weight: lighter;
+	font-size: .9rem;
+	color: var(--Paragraf-Color);
+}
+
+/*Baris akhir daftar menu pertama*/
+
+/*Bagian dafar menu kedua*/
+	ul.Food_Menu_List > li.Menu_List_2
+	{
+		/*display: var(--Flexing-Items);
+		flex-flow: row wrap;
+		align-items: center;
+		justify-items: center;
+		position: var(--Relative-Position);*/
+		transform: translate(4vmin);
+	}
+
+li.Menu_List_2 > a.Burger_Menu
+{	
+	text-decoration: var(--Link-Decoration);
+}
+
+	a.Burger_Menu > div.Background_Thumbnail_2
+	{	
+		object-fit: min-content;
+		box-sizing: var(--Box-Setting);
+		background-color: var(--Bg-Hover-Effect-Burger);
+		display: var(--Inline-Block-Ds);
+		width: 38vmin;
+	}
+
+a.Burger_Menu > h4.Burger_Link
+{
+	display: var(--Flexing-Items);
+	justify-content: center;
+	align-content: center;
+	justify-content: space-around;
+	transform: translate(0, 4vmin);
+	position: var(--Relative-Position);
+	color: var(--Paragraf-Effect);
+	font-family: "Nav_Fonts",sans-serif;
+	font-size: calc(.4rem + 1vw);
+	text-transform: uppercase;
+	font-weight: bolder;
+	font-stretch: condensed;
+}
+	
+	h4.Burger_Link::before
+	{
+		content: '';
+		display: var(--Flexing-Items);
+		justify-items: center;
+		justify-content: space-around;
+		align-items: flex-start;
+		position: var(--Absolute-Position);
+		transform: translate(1vmin, 6vmin) scaleX(4.5);
+		background-color: var(--Underline-Background-color);
+		display: var(--Inline-Block-Ds);
+		width: 10.5vmin;
+		height: .2vmin;
+		box-sizing: var(--Box-Setting);
+	}	
+
+	/*Bagian hover efek*/
+	h4.Burger_Link:hover::before
+	{
+		transition: all 200ms linear;
+		background-color: var(--Hover-Effect);
+		box-sizing: var(--Box-Setting);
+		padding-left: 3vmin;
+	}
+	/*Baris akhir efek hover*/
+
+h4.Burger_Link + h5.Menu_Paragraf_2
+{	
+	transform: translate(0, 12vmin);
+	display: var(--Flexing-Items);
+	justify-content: center;
+	align-items: center;
+	font-family: Second_Paragraf_Fonts, monospace;
+	font-weight: lighter;
+	font-size: .9rem;
+	color: var(--Paragraf-Color);
+}
+/*Baris akhir menu kedua*/
+
+/*Bagian daftar menu ketiga*/
+	ul.Food_Menu_List > li.Menu_List_3
+	{
+		/*display: var(--Flexing-Items);
+		flex-flow: row wrap;
+		align-items: center;
+		justify-items: center;
+		position: var(--Relative-Position);*/
+		transform: translate(8vmin);
+	}
+
+li.Menu_List_3 > a.Yogurt_Menu
+{	
+	text-decoration: var(--Link-Decoration);
+}
+
+	a.Yogurt_Menu > div.Background_Thumbnail_3
+	{	
+		object-fit: min-content;
+		box-sizing: var(--Box-Setting);
+		background-color: var(--Bg-Hover-Effect-Yogurt);
+		display: var(--Inline-Block-Ds);
+		width: 38vmin;
+	}
+
+a.Yogurt_Menu > h4.Yogurt_Link
+{
+	display: var(--Flexing-Items);
+	justify-content: center;
+	align-content: center;
+	justify-content: space-around;
+	transform: translate(0, 4vmin);
+	position: var(--Relative-Position);
+	color: var(--Paragraf-Effect);
+	font-family: "Nav_Fonts",sans-serif;
+	font-size: calc(.4rem + 1vw);
+	text-transform: uppercase;
+	font-weight: bolder;
+	font-stretch: condensed;
+}
+	
+	h4.Yogurt_Link::before
+	{
+		content: '';
+		display: var(--Flexing-Items);
+		justify-items: center;
+		justify-content: space-around;
+		align-items: flex-start;
+		position: var(--Absolute-Position);
+		transform: translate(1vmin, 6vmin) scaleX(4.5);
+		background-color: var(--Underline-Background-color);
+		width: 9vmin;
+		height: .2vmin;
+		box-sizing: var(--Box-Setting);
+	}	
+
+	/*Bagian hover efek*/
+	h4.Yogurt_Link:hover::before
+	{
+		transition: all 200ms linear;
+		background-color: var(--Hover-Effect);
+		box-sizing: var(--Box-Setting);
+		padding-left: 3vmin;
+	}
+	/*Baris akhir efek hover*/
+
+h4.Yogurt_Link + h5.Menu_Paragraf_3
+{	
+	transform: translate(0, 12vmin);
+	display: var(--Flexing-Items);
+	justify-content: center;
+	align-items: center;
+	font-family: Second_Paragraf_Fonts, monospace;
+	font-weight: lighter;
+	font-size: .9rem;
+	color: var(--Paragraf-Color);
+}
+
+/*Baris akhir menu ketiga*/
+
+/*Akhir bagian menu makanan*/
+
+/*Baris akhir daftar menu makanan*/
+
+/*Bagian menu minuman*/
+section.Drink_List_Container
+{
+	display: var(--Flexing-Items);
+	align-items: space-around;
+	/*justify-content: center;*/
+	flex-flow: column wrap;
+	transform: translate(23vmin, 185vmin);
+}
+	/*Bagian Judul*/
+	section.Drink_List_Container > h3.Drink_Title
+	{
+		position: var(--Relative-Position);
+		color: var(--Paragraf-Effect);
+		font-family: "Nav_Fonts",sans-serif;
+		font-size: calc(.5rem + 1vw);
+		text-transform: uppercase;
+		font-weight: 200;
+	}
+	/*Akhir bagian judul*/
+
+/*Bagian thumbnail minuman pertama*/
+h3.Drink_Title + ul.Drink_Menu_List
+{
+	list-style: var(--Link-Decoration);
+	display: var(--Flexing-Items);
+	justify-content: space-evenly;
+	align-items: flex-start;
+	flex-flow: row wrap;
+	transform: translate(-20vmin, 5vmin);
+	padding-right: 90vmin;
+	padding-left: 10vmin;
+}
+
+	li.Drink_List_1 > a.Drink_Container_Link 
+	{
+		text-decoration: var(--Link-Decoration);
+		cursor: var(--Cursor-Pointer);
+		position: var(--Relative-Position);
+	}
+
+a.Drink_Container_Link > img#Drink_Image_Thumbnail_1
+{
+	box-sizing: var(--Box-Setting);
+	object-fit: min-content;
+	max-width: 400vmin;
+	position: var(--Absolute-Position);
+}
+
+
+	/*Bagian hover efek*/
+	a.Drink_Container_Link > div.Drink_Thumbnail_Container_1:hover
+	{
+		transform: scale(1.2);
+		transform-origin: center;
+		animation: 950ms scalling;
+		cursor: var(--Cursor-Pointer);
+	}	
+	/*Akhir bagian hover efek*/
+
+div.Drink_Thumbnail_Container_1 + h5.Drink_Paragraf_1
+{	
+	display: var(--Flexing-Items);
+	justify-content: safe center;
+	align-items: safe center;
+	text-transform: uppercase;
+	position: var(--Relative-Position);
+	color: var(--Paragraf-Effect);
+	font-family: "Nav_Fonts",sans-serif;
+	font-size: calc(.4rem + 1vw);
+	text-transform: uppercase;
+	font-weight: bolder;
+	font-stretch: condensed;
+}
+	div.Drink_Thumbnail_Container_1 + h5.Drink_Paragraf_1::before
+	{
+		content: 'All our coffee selections in hot, iced, and frappe';
+		position: var(--Absolute-Position);
+		text-transform: lowercase;
+		font-family: Second_Paragraf_Fonts, monospace;
+		font-weight: lighter;
+		font-size: .9rem;
+		color: var(--Paragraf-Color);
+		display: var(--Block-Display);
+		transform: translate(0, 5rem);
+	}
+
+h5.Drink_Paragraf_1::after
+{
+	content: '';
+	display: var(--Flexing-Items);
+	position: var(--Absolute-Position);
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	flex-direction: row;
+	background-color: var(--Underline-Background-color);
+	transform: translate(1vmin, 4vmin) scaleX(5.5);
+	width: 9vmin;
+	height: .2vmin;
+	box-sizing: var(--Box-Setting);
+}
+
+	/*Bagian hover efek*/
+	h5.Drink_Paragraf_1:hover::after
+	{	
+		content: '';
+		transition: all 200ms linear;
+		background-color: var(--Hover-Effect);
+		box-sizing: var(--Box-Setting);
+		padding-left: 3vmin;
+	}
+	/*Baris akhir efek hover*/
+
+/*Akhir bagian thumbnail minuman*/
+
+	/*Bagian thumbnail minuman kedua*/
+	li.Drink_List_2 > a.Drink_Container_Link_2
+	{
+		text-decoration: var(--Link-Decoration);
+		cursor: var(--Cursor-Pointer);
+		position: var(--Relative-Position);
+	}
+		a.Drink_Container_Link_2 > img#Drink_Image_Thumbnail_2
+		{
+			box-sizing: var(--Box-Setting);
+			object-fit: min-content;
+			max-width: 400vmin;
+			position: var(--Absolute-Position);			
+		}
+
+	/*Bagian hover efek*/
+	a.Drink_Container_Link_2 > div.Drink_Thumbnail_Container_2:hover
+	{
+		transform: scale(1.2);
+		transform-origin: center;
+		animation: 950ms scalling;
+		cursor: var(--Cursor-Pointer);
+	}	
+	/*Akhir bagian hover efek*/
+
+			div.Drink_Thumbnail_Container_2 + h5.Drink_Paragraf_2
+			{
+				display: var(--Flexing-Items);
+				justify-content: center;
+				align-items: center;
+				position: var(--Relative-Position);
+				color: var(--Paragraf-Effect);
+				font-family: "Nav_Fonts",sans-serif;
+				font-size: calc(.4rem + 1vw);
+				text-transform: uppercase;
+				font-weight: bolder;
+				font-stretch: condensed;
+			}
+
+	div.Drink_Thumbnail_Container_2 + h5.Drink_Paragraf_2::before
+	{
+		content: 'All our coffee selections in hot, iced, and frappe';
+		position: var(--Absolute-Position);
+		text-transform: lowercase;
+		display: var(--Block-Display);
+		transform: translate(0, 5rem);
+		font-family: Second_Paragraf_Fonts, monospace;
+		font-weight: lighter;
+		font-size: .9rem;
+		color: var(--Paragraf-Color);
+	}
+		h5.Drink_Paragraf_2::after
+		{
+			content: '';
+			display: var(--Flexing-Items);
+			position: var(--Absolute-Position);
+			justify-content: center;
+			align-items: center;
+			align-self: center;
+			flex-direction: row;
+			background-color: var(--Underline-Background-color);
+			transform: translate(1vmin, 4vmin) scaleX(5.5);
+			width: 9vmin;
+			height: .2vmin;
+			box-sizing: var(--Box-Setting);
+		}
+
+	/*Bagian hover efek*/
+	h5.Drink_Paragraf_2:hover::after
+	{	
+		content: '';
+		transition: all 200ms linear;
+		background-color: var(--Hover-Effect);
+		box-sizing: var(--Box-Setting);
+		padding-left: 3vmin;
+	}
+	/*Baris akhir efek hover*/
+
+	/*Akhir bagian thumbnail minuman*/	
+
+/*Akhir bagian menu minuman*/
+
+/*Bagian Footer*/
+footer.Footer_Container
+{
+	position: var(--Relative-Position);
+	/*transform: translate(30vmin, 100vmin);*/
+	background-color: var(--Hover-Effect);
+	display: var(--Flexing-Items);
+	justify-content: flex-start;
+	align-items: center;
+}
+/*Akhir bagian Footer*/

@@ -1,0 +1,143 @@
+*
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: var(--Box-Setting);
+}	
+
+/*Bagian CSS Variable*/
+:root
+{
+	--Box-Setting: border-box;
+
+/*Variable bagian Display*/
+	--Flexing-Items: flex;
+	--Inline-Block-Ds: inline-block;
+/*Akhir baris variable Display*/
+
+/*Variable bagian Position*/
+	--Fixed-Position: fixed;
+	--Relative-Position: relative;
+	--Absolute-Position: absolute;
+/*Akhir baris variable Position*/
+
+	--White-Bg: rgba(255, 255, 255);
+	--Nav-Link-Color: rgba(45, 45, 45, .9);
+	--Hover-Effect: hsla(30, 98%, 57%, 1.0);
+
+/*Variable bagian Dekorasi*/
+	--Items_Style: none;
+	--Link-Decoration: none;
+/*Akhir baris Variable Dekorasi*/
+}
+	
+/*Akhir bagian CSS Variable*/
+
+/*Bagian Header*/
+header.Jco_Top_Bar
+{	
+	display: var(--Flexing-Items);
+	flex-direction: row;
+	align-content: center;
+	justify-content: flex-start;
+	background-color: var(--White-Bg);
+	position: var(--Fixed-Position);
+	height: 15vmin;
+	width: 100%;
+	z-index: 10;
+}
+
+header.Jco_Top_Bar > ul.Jco_Navigation_Menu
+{	
+	/*display: var(--Flexing-Items);
+	align-content: center;
+	justify-content: center;*/
+	position: var(--Relative-Position);
+	top: 1vh;
+	margin-left: 135vmin;
+}
+
+ul.Jco_Navigation_Menu > li.Navigation_List
+{	display: var(--Flexing-Items);
+	justify-content: flex-start;
+	width: 12vmin;
+	display: var(--Inline-Block-Ds);
+	list-style: var(--Items_Style);
+}	
+
+	/*List items position absolute*/
+	ul.Jco_Navigation_Menu > li.Navigation_List:nth-child(1)
+	{	
+		/*display: var(--Flexing-Items);
+		justify-content: flex-start;*/
+		position: var(--Absolute-Position);
+		right: 106vmin;
+		top: 1.3vh;
+	}	
+		ul.Jco_Navigation_Menu > li.Navigation_List:nth-child(2)
+		{	
+			position: var(--Absolute-Position);
+			right: 28vmin;
+			top: 5vmin;
+		}	
+	ul.Jco_Navigation_Menu > li.Navigation_List:nth-child(3)
+	{	
+		position: var(--Absolute-Position);
+		right: 10vmin;
+		top: 5vmin;
+	}	
+		ul.Jco_Navigation_Menu > li.Navigation_List:nth-child(4)
+		{	
+			position: var(--Absolute-Position);
+			right: -4vmin;
+			top: 5vmin;
+		}
+	ul.Jco_Navigation_Menu > li.Navigation_List:nth-child(5)
+	{	
+		position: var(--Absolute-Position);
+		right: -20vmin;
+		top: 5vmin;
+	}		
+		ul.Jco_Navigation_Menu > li.Navigation_List:nth-child(6)
+		{	
+			position: var(--Absolute-Position);
+			right: -38vmin;
+			top: 5vmin;
+		}	
+	/*Baris akhir*/
+
+	/*Style pada link*/
+	li.Navigation_List > a 
+	{
+		text-decoration: var(--Link-Decoration);
+		color: var(--Nav-Link-Color);
+		font-weight: bold;
+		font-size: calc(.4rem + .6rem);
+		font-family: "Nav_Fonts",sans-serif;
+	}	
+		/*Efek hover*/
+		li.Navigation_List > a:hover
+		{
+			color: var(--Hover-Effect);
+			transition: all 876ms ease-out;
+		}
+
+		img.Logo_Image:hover
+		{	
+			transform: scale(1.2);
+			transition: transform 900ms ease-in-out;
+		}
+		
+	/*Bagian @font-face*/
+	@font-face
+	{	
+		font-family: "Nav_Fonts";
+		font-weight: normal;
+		/*font-stretch: ultra-expanded;*/
+		src: url(Fira_Code/FiraCode-Bold.ttf) format("trutype");
+	}
+	/*Baris akhir style pada link*/
+
+
+
+/*Akhir bagian header*/		
